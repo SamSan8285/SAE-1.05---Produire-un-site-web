@@ -1,0 +1,51 @@
+[
+    {
+        "theme": "un fruit",
+        "name" : "un litchi",
+        "content": " tout comme le litchi, j'ai une apparence réservée et parfois difficile à percer, mais une fois que l'on prend le temps de me connaître, je suis douce et chaleureuse.",
+        "image": "img/litchi.png",
+        "id" : "litchi"
+    },
+    {
+        "theme": "un vêtement",
+        "name" : "un sweat-shirt",
+        "content": " il représente ma nature simple et ma préférence pour le confort. Il symbolise aussi la chaleur et la proximité, des valeurs auxquelles je tiens.",
+        "image": "Images/sweatshirt.png",
+        "id" : "sweatshirt"
+    },
+    {
+        "theme": "une saison",
+        "name" : "le printemps",
+        "content": " c'est la saison de la renaissance et de la tranquillité. Cela reflète ma nature calme et discrète, tout en symbolisant l'épanouissement progressif de ma personnalité.",
+        "image": "Images/loup.png",
+        "id" : "printemps"
+    },
+    {
+        "theme": "une couleur",
+        "name" : "le bleu pastel",
+        "content": "je serais le bleu pastel car il est souvent interprété comme signifiant le calme ou l'innocence en raison de son association avec le ciel et l'eau. Le bleu pastel est également associé à la jeunesse.",
+        "image": "Images/BleuPastel.png",
+        "id" : "bleu"
+    },
+    {
+        "theme": "une fleur",
+        "name" : "une rose rouge",
+        "content": " elle symbolise le romantisme, l'amour et la passion.",
+        "image": "Images/loup.png",
+        "id" : "rose"
+    },
+    {
+        "theme": "un animal",
+        "name" : "un loup",
+        "content": " il représente la détermination, la solarité et la loyauté. Comme le loup, j'ai besoin d'être entouré de ceux qui me sont chers, et je suis prêt à défendre et à soutenir mes proches.",
+        "image": "Images/loup.png",
+        "id" : "loup"
+    },
+    {
+        "theme": "un élément",
+        "name" : "le feu",
+        "content": "il est réconfortant par sa chaleur et la danse apaisante de ses flammes, il la capacité de raviver l'espoir, tout comme ma propre chaleur intérieur et l'optimisme qui brûle en moi.",
+        "image": "Images/loup.png",
+        "id" : "feu"
+    }
+]
