@@ -6,32 +6,63 @@ ScrollReveal({
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  //création de mes section de "Si j'étais ... Je serais..."
-  //lier le data.json
+  // Création de mes sections "Si j'étais ... Je serais..."
+  // Lier le data.json
   fetch('./data.json').then(function (response) {
     response.json().then(function (data) {
       data.forEach(function afficheAnalogie(resultat) {
-        document.querySelector('#list-analogies').innerHTML += "<section class=\"sec\" id=" + resultat.id + "><h1 class='titre' >Si j’étais " +
+        // Créer un conteneur div pour chaque section
+        var sectionContainer = document.createElement('section');
+        sectionContainer.classList.add('sec');
+
+        // Utiliser l'id de l'image pour l'id de la section
+        sectionContainer.id = "section-" + resultat.id;
+
+        // Créer une div pour contenir l'image et le texte
+        var contentContainer = document.createElement('div');
+        contentContainer.classList.add('content-container');
+
+        // Construire le contenu de la section
+        var sectionContent = "<h1 class='titre'>Si j’étais " +
           resultat.theme + ", je serais " +
-          resultat.name + ".</h1><img id=" + resultat.id + " src=" + resultat.image + " alt=\"\"class=\"image\"><p class=\"justify\"> " +
-          resultat.content + " </p><a href=" + resultat.image + "  class=\"down\"><img src=\"img/down.png\"/></a></section>";
-      })
-      // Création de l'animation de mes analogies 
-      //pour mes images
-      ScrollReveal().reveal('.sec #litchi, .sec #sweatshirt , .sec #printemps , .sec #bleu , .sec #rose , .sec #loup , .sec #feu ', {
-        origin: 'right'
+          resultat.name + ".</h1>";
+
+        // Ajouter le contenu à la section container
+        sectionContainer.innerHTML = sectionContent;
+
+        // Ajouter l'image à la div contentContainer
+        contentContainer.innerHTML = "<img id=\"" + resultat.id + "\" src=" + resultat.image + " alt=\"\" class=\"image\">";
+
+        // Ajouter le contenu après l'image
+        contentContainer.innerHTML += "<p class=\"justify\">" + resultat.content + "</p>";
+
+        // Ajouter la div contentContainer à la section
+        sectionContainer.appendChild(contentContainer);
+
+        // Ajouter la section container à #list-analogies
+        document.querySelector('#list-analogies').appendChild(sectionContainer);
       });
-      //pour les titres
+      
+      // Création de l'animation de mes analogies 
+      // pour mes images
+      ScrollReveal().reveal('.sec .image', {
+        origin: 'left'
+      });
+      // pour les titres
       ScrollReveal().reveal('.titre', {
         origin: 'top'
       });
-      //pour les paragraphes
+      // pour les paragraphes
       ScrollReveal().reveal('.justify', {
-        origin: 'left'
+        origin: 'right'
       });
-    })
-  })
-})
+    });
+  });
+});
+
+
+
+
 
 //création de l'animation de mon titre 
 const typed = new Typed('.simple-text', {
@@ -45,9 +76,16 @@ const typed = new Typed('.simple-text', {
 //animation d'affichage des mentions légales
 function toggleLegal() {
   var legalParagraph = document.getElementById('legal');
-  if (legalParagraph.style.display === 'none') {
-    legalParagraph.style.display = 'block';
+  legalParagraph.classList.toggle('visible');
+  
+  if (legalParagraph.classList.contains('visible')) {
+      legalParagraph.style.display = 'block';
+      legalParagraph.style.maxHeight = legalParagraph.scrollHeight + 'px';
+      legalParagraph.scrollIntoView({ behavior: 'smooth' });
   } else {
-    legalParagraph.style.display = 'none';
+      legalParagraph.style.maxHeight = '0';
+      legalParagraph.addEventListener('transitionend', function () {
+          legalParagraph.style.display = 'none';
+      }, { once: true });
   }
 }

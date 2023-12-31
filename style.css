@@ -29,7 +29,7 @@ form {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: 10%;
   margin-bottom: 20px;
 }
 
@@ -93,6 +93,45 @@ header {
   width: 100%;
 }
 
+#list-analogies{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.sec img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.sec{
+  display: flex;
+  width: 70%;
+  margin-top: 4rem;
+  flex-direction: column;
+}
+
+.content-container{
+  background-color: #f1e9df;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  min-height: 20rem;
+}
+
+.justify{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  margin: 0px 50px 0px 50px;
+    /* Haut Droite Bas Gauche */
+}
+
 .center {
   text-align: center;
 }
@@ -151,3 +190,33 @@ header {
   background-position: center;
 
 } 
+#sweatshirt{
+  max-width: 35%; /* La largeur maximale est définie à 100% de la largeur du conteneur parent */
+  height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+}
+
+#printemps{
+  max-width: 35%; /* La largeur maximale est définie à 100% de la largeur du conteneur parent */
+  height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+}
+
+#bleu{
+  max-width: 35%; /* La largeur maximale est définie à 100% de la largeur du conteneur parent */
+  height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+}
+#rose {
+  max-width: 40%; /* La largeur maximale est définie à 100% de la largeur du conteneur parent */
+  height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+}
+
+#legal {
+  display: none;
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.visible {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+}
